@@ -1,0 +1,18 @@
+
+AWSTemplateFormatVersion: "2010-09-09"
+Description: A Web server EC2instance
+Resources:
+  WebServer: #An inline comment
+    Type: "AWS::EC2::Instance"
+    Properties: 
+      ImageId: "ami-024e6efaf93d85776" #Another comment -- This is a Linux AMI
+      InstanceType: t2.micro
+      KeyName: awstest
+      SecurityGroupIds: 
+         - sg-03504a384d2519bd4
+
+
+Outputs:
+  InstanceId:
+    Description: The Instance ID of the EC2 instance
+    Value: WebServer
